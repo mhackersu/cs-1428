@@ -1,0 +1,29 @@
+// HACKER, MICHAEL
+// CS1428.005
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+    Statement 1
+
+    If (BooleanExpression1){
+        Statement 2
+
+        If (BooleanExpression2){
+            Statement 3
+        }
+
+        Statement 4
+    }
+
+    Else {
+        Statement 7
+    }
+
+    Statement 8
+
+    return 0;
+//}

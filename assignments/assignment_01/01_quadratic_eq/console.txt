@@ -1,0 +1,12 @@
+/Users/michaelneal/_dev/txstate/cs_1428/assignments/assignment_01/01_quadratic_eq/cmake-build-debug/01_quadratic_eq
+Welcome to the quadratic equation calculator. Please enter the inputs.
+Note: This machine does not support complex or imaginary roots.
+Enter the coefficient for a: 
+2
+Enter the coefficient for b: 
+5
+Enter the coefficient for c: 
+3
+The roots of x are: -1 , 1.5
+
+Process finished with exit code 0
