@@ -1,4 +1,5 @@
-// HACKER, MICHAEL
+// HACKER, MICHAEL 
+// A04868120
 // CS1428.005
 // ASSIGNMENT_01
 
@@ -11,7 +12,7 @@ int main() {
     float a, b, c, d, d1, d2, result1, result2;
 
     cout << "Welcome to the quadratic equation calculator. Please enter the inputs." << endl;
-    cout << "Note: This machine does not support complex or imaginary roots." << endl;
+    cout << "Note: This calculator does not support complex or imaginary roots." << endl;
 
     cout << "Enter the coefficient for a: " << endl;
     cin >> a;
@@ -32,10 +33,10 @@ int main() {
         result2 = d2 / ( 2*a );
         cout << "The roots of x are: " << result1 << " , " << result2 << endl;
     } else {
-        cout << "The roots are complex and or imaginary and are not supported by this calculator." << endl;
+        cout << "The roots are complex and or imaginary and are way beyond the scope of this calculator." << endl;
     }
 
-    // Testing outputs
+    // Testing outputs * Debug Section
 
     // cout << "Testing outputs: " << endl;
     // cout << "The output of d is: " << d << endl;
