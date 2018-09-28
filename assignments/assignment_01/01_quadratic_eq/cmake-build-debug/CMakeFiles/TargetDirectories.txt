@@ -1,3 +1,0 @@
-/Users/michaelneal/_dev/txstate/cs_1428/assignments/assignment_01/01_quadratic_eq/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/michaelneal/_dev/txstate/cs_1428/assignments/assignment_01/01_quadratic_eq/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/michaelneal/_dev/txstate/cs_1428/assignments/assignment_01/01_quadratic_eq/cmake-build-debug/CMakeFiles/01_quadratic_eq.dir
