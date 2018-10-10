@@ -8,21 +8,32 @@ using namespace std;
 
 int main() {
 
-    string firstName, raceName;
-    int AGE, SAT, raceType, satStat, ageStat, gpaStat, raceStat;
-    double GPA;
+    // Declare vars
 
+    string firstName, raceName;
+    int ageCount, satScore, raceType, satStat, ageStat, gpaStat, raceStat, acceptanceStat;
+    double gpaIs;
+
+    // Get user input
+
+    cout << endl;
+    cout << endl;
+
+    cout << "Welcome to the Starfleet Academy Acceptance Qualification Program" << endl;
+    cout << "Please enter your information according to the following prompts:" << endl;
 
     cout << "First Name: ";
     cin >> firstName;
     cout << "Age: ";
-    cin >> AGE;
+    cin >> ageCount;
     cout << "GPA: ";
-    cin >> GPA;
+    cin >> gpaIs;
     cout << "SAT Score: ";
-    cin >> SAT;
+    cin >> satScore;
     cout << "Select Race (Human, Vulcan, Klingon, Romulan): ";
     cin >> raceName;
+
+    // Set type
 
     if ( raceName == "Human" ) {
         raceType = 0;
@@ -34,45 +45,7 @@ int main() {
         raceType = 3;
     }
 
-    if (( AGE >= 16 ) && ( raceType = 1 )) {
-        ageStat = 1;
-    } else if (( AGE >= 17 ) && ( raceType = 1 )) {
-        ageStat = 1;
-    } ageStat = 0;
-
-    if ( GPA >= 3.5 ) {
-        gpaStat = 1;
-        satStat = 1;
-    } else if ( GPA < 3.5 ) {
-        satStat = 0;
-        gpaStat = 1;
-    } else if (GPA >= 2.0 ) {
-        gpaStat = 1;
-    } gpaStat = 0;
-
-    if ( SAT > 1500 ) {
-        satStat = 1;
-        ageStat = 1;
-    } else if ( SAT >= 1500 ) {
-        satStat = 1;
-    } else if ( SAT >= 1100 ) {
-        satStat = 1;
-    } else if ( SAT >= 800 ) {
-        satStat = 1;
-    }
-    // satStat = 0;
-
-    if ( raceName != "Romulan" ) {
-        raceStat = 1;
-    } else if ( raceName == "Romulan" ) {
-        raceStat = 0;
-    }
-
-    if ( satStat == '1' ) {
-        cout << "SAT Stat is True\n";
-    } else if ( satStat == '0' ) {
-        cout << "SAT Stat is False\n";
-    }
+    // Debug info
 
     cout << "Name: " << firstName << endl;
     cout << "Race Name: " << raceName << endl;
@@ -81,6 +54,35 @@ int main() {
     cout << "GPA Stat: " << gpaStat << endl;
     cout << "SAT Stat: " << satStat << endl;
     cout << "Race Stat: " << raceStat << endl;
+
+    if (( gpaIs >= 3.5) && ( raceType != 3 ) && ( ageCount >= 17 )) {
+        acceptanceStat = 1;
+        cout << "GPA is 3.5 or greater, age is 17 or older and not Romulan" << endl;
+    } else if (( gpaIs >= 3.5 ) && ( raceType = 1 ) && ( ageCount >= 16 )) {
+        acceptanceStat = 1;
+        cout << "GPA is 3.5 or greater, age is 16 or older." << endl;
+        cout << "Age exception: Vulcan." << endl;
+    } else if (( satScore >= 1500 ) && ( gpaIs >= 3.5 ) && ( raceType != 3 )) {
+        acceptanceStat = 1;
+        cout << "SAT score is 1500 or greater, GPA is 3.5 or greater." << endl;
+        cout << "Age exception: 1500+ SAT." << endl;
+        cout << "Welcome young padawan." << endl;
+    } else if ((( satScore < 1500 ) && ( satScore >= 1100 )) && (( raceType = 1 ) && ( ageCount >= 16 ))) {
+        acceptanceStat = 1;
+        cout << "Vulcan, age is 16 or older, SAT is between 1100 and 1499" << endl;
+    } else if ((( satScore < 1500 ) && ( satScore >= 1100 )) && (( raceType != 3 ) && ( ageCount >= 17 ))) {
+        acceptanceStat = 1;
+        cout << "Non-Romulan, Age 17 or older, SAT is between 1100 and 1499" << endl;
+        cout << "GPA exception: 1100+ SAT" << endl;
+    }
+
+    // Print acceptance
+
+    if ( acceptanceStat == 0 ) {
+        cout << "Your application status to SFA is: DENIED" << endl;
+    } else if ( acceptanceStat == 1 ) {
+        cout << "Congratulations, your application status to SFA is: APPROVED" << endl;
+    }
 
 
     return 0;
