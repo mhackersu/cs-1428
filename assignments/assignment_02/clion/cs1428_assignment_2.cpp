@@ -1,5 +1,6 @@
 // Assignment #2
 // HACKER, MICHAEL
+// A04868102
 // CS1428-005
 // STARFLEET ACADEMY PROGRAM
 
@@ -33,7 +34,7 @@ int main() {
     cout << "Select Race (Human, Vulcan, Klingon, Romulan): ";
     cin >> raceName;
 
-    // Set type
+    // Set raceType
 
     if ( raceName == "Human" ) {
         raceType = 0;
@@ -45,19 +46,11 @@ int main() {
         raceType = 3;
     }
 
-    // Debug info
-
-    cout << "Name: " << firstName << endl;
-    cout << "Race Name: " << raceName << endl;
-    cout << "Race Type: " << raceType << endl;
-    cout << "Age Stat: " << ageStat << endl;
-    cout << "GPA Stat: " << gpaStat << endl;
-    cout << "SAT Stat: " << satStat << endl;
-    cout << "Race Stat: " << raceStat << endl;
 
     if (( gpaIs >= 3.5) && ( raceType != 3 ) && ( ageCount >= 17 )) {
         acceptanceStat = 1;
-        cout << "GPA is 3.5 or greater, age is 17 or older and not Romulan" << endl;
+        cout << "GPA is 3.5 or greater, age is 17 or older. Non-Romulan" << endl;
+        cout << "SAT exception: GPA of " << gpaIs << endl;
     } else if (( gpaIs >= 3.5 ) && ( raceType = 1 ) && ( ageCount >= 16 )) {
         acceptanceStat = 1;
         cout << "GPA is 3.5 or greater, age is 16 or older." << endl;
@@ -69,11 +62,17 @@ int main() {
         cout << "Welcome young padawan." << endl;
     } else if ((( satScore < 1500 ) && ( satScore >= 1100 )) && (( raceType = 1 ) && ( ageCount >= 16 ))) {
         acceptanceStat = 1;
-        cout << "Vulcan, age is 16 or older, SAT is between 1100 and 1499" << endl;
+        cout << "Age is 16 or older, SAT is between 1100 and 1499" << endl;
+        cout << "Age exception: Vulcan" << endl;
     } else if ((( satScore < 1500 ) && ( satScore >= 1100 )) && (( raceType != 3 ) && ( ageCount >= 17 ))) {
         acceptanceStat = 1;
         cout << "Non-Romulan, Age 17 or older, SAT is between 1100 and 1499" << endl;
         cout << "GPA exception: 1100+ SAT" << endl;
+    } else if (( satScore < 1100 ) && ( satScore >= 800 ) && ( gpaIs >= 2.0 )
+                 && ( raceType != 3 ) && ( raceType != 1 ) && ( ageCount >= 17 )) {
+        acceptanceStat = 1;
+        cout << "Non-Romulan, Age is 17 or older, SAT is between 800 and 1099." << endl;
+        cout << "No exception status to report." << endl;
     }
 
     // Print acceptance
@@ -84,6 +83,12 @@ int main() {
         cout << "Congratulations, your application status to SFA is: APPROVED" << endl;
     }
 
+    // Debug info
+
+    // cout << endl;
+    // cout << "Race Type: " << raceType << endl;
+    // cout << "Acceptance Stat: " << acceptanceStat << endl;
+    // cout << endl;
 
     return 0;
 }
