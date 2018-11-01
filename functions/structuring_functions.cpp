@@ -3,7 +3,8 @@
 using namespace std;
 
 // function prototype
-double compute_average(int s1, int s2, int s3)
+// identifiers may not exist
+double compute_average(int, int, int)
 
 init main()
 
