@@ -1,17 +1,22 @@
-// Assignment #3
+// Assignment #4
 // HACKER, MICHAEL
 // A04868102
 // CS1428-005
-// WIZ-BANG PRIME NUMBER THING
+// PRIME NUMBERS REVISITED
 
 #include <iostream>
 using namespace std;
 
+bool Prime (int num);
+
+int num;
+
 int main() {
 
     // Set vars.
-    bool isPrime;
-    int checkIfPrime = 0, i = 2, j = 0;
+    // string primeResult;
+    bool isPrime = 1;
+    int checkIfPrime = 0;
 
     // Request user input.
     cout << "Enter a positive integer to be evauated: " << endl;
@@ -23,16 +28,8 @@ int main() {
         cin >> checkIfPrime;
     }
 
-    // Calculate if prime.
-    for ( i = 2; i < checkIfPrime; i++ ) {
-        if (( checkIfPrime % i ) == 0 ) {
-            j++;
-            break;
-        }
-    // Declare prime state.
-    } if ( j == 0 ) {
-        isPrime = 1;
-    } else isPrime = 0;
+    // Debug
+    Prime(num);
 
     // Print prime state.
     if ( isPrime == 1 ) {
@@ -40,4 +37,18 @@ int main() {
     } else cout << "The number " << checkIfPrime << " is not prime." << endl;
 
     return 0;
+}
+
+bool Prime (int num) {
+
+    int i, j = 0;
+
+    // Calculate if prime.
+    for ( i = 2; i < num; i++ ) {
+        if (( num % i ) == 0 ) {
+            j++;
+            break;
+        }
+    }
+    return num;
 }
