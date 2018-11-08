@@ -1,5 +1,7 @@
 ### Flowchart Review #1
 
+![Flowcharts](flowcharts.jpeg)
+
 ```
 stmt_1;
 while (bool_1)
@@ -27,6 +29,8 @@ if (bool_1){
 ![Fc2](exam_02_review_fc_2.png)
 
 # Functions & Loops (50/50)
+
+![Functions](functions.jpeg)
 
 ## Loops (50 pts)
 
