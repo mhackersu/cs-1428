@@ -7,17 +7,22 @@
 #include <iostream>
 using namespace std;
 
-bool Prime (int checkIfPrime);
+bool Prime(int checkIfPrime);
 
 int checkIfPrime;
 
 int main() {
 
     // Set vars.
-    int checkIfPrimeLower = 0;
-    int checkIfPrimeUpper = 0;
+    int checkIfPrimeLower, checkIfPrimeUpper;
 
-    // Validate and gather user input.
+    // User input.
+    cout << "Enter a positive integer for the lower limit to be evauated: " << endl;
+    cin >> checkIfPrimeLower;
+    cout << "Enter a positive integer for the upper limit to be evauated: " << endl;
+    cin >> checkIfPrimeUpper;
+
+    // Validate and user input.
     while ( ( checkIfPrimeLower < 1 ) || ( checkIfPrimeUpper < 1 ) ) {
         cout << "Integer is not positive. Please enter positive integers." << endl;
         cout << "Enter a positive integer for the lower limit to be evauated: " << endl;
@@ -30,7 +35,10 @@ int main() {
     cout << "The prime numbers from " << checkIfPrimeLower << " to " << checkIfPrimeUpper << " are:" << endl;
     for (  int iPrime = checkIfPrimeLower; iPrime < checkIfPrimeUpper; iPrime++ ) {
         checkIfPrime = iPrime;
+
+        // Call Prime function.
         Prime(checkIfPrime);
+
         if (( Prime(checkIfPrime)) == 1 ) {
             cout << iPrime << endl;
         }
