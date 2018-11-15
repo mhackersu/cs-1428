@@ -2,12 +2,12 @@
 
 ```
 stmt_1;
-while (bool_1)
+while (bool_a)
 {
-    if (bool_2) {
+    if (bool_b) {
         stmt_2;
-    } stmt_3
-}
+    }
+} stmt_3
 ```
 
 ![Fc1](exam_02_review_fc_1.png)
@@ -15,13 +15,13 @@ while (bool_1)
 ### Flowchart Review #2
 
 ```
-if (bool_1){
+if (bool_a){
     do {
         stmt_1;
-    } while (bool_2);
+    } while (bool_2b;
 } else {
     stmt_2;
-}
+} stmt_3;
 ```
 
 ![Fc2](exam_02_review_fc_2.png)

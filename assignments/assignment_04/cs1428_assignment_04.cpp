@@ -7,48 +7,56 @@
 #include <iostream>
 using namespace std;
 
-bool Prime (int num);
+bool Prime (int checkIfPrime);
 
-int num;
+int checkIfPrime;
 
 int main() {
 
     // Set vars.
-    // string primeResult;
-    bool isPrime = 1;
-    int checkIfPrime = 0;
+    int checkIfPrimeLower = 0;
+    int checkIfPrimeUpper = 0;
 
-    // Request user input.
-    cout << "Enter a positive integer to be evauated: " << endl;
-    cin >> checkIfPrime;
-
-    // Validate user input.
-    while ( checkIfPrime < 1 ) {
-        cout << "Integer is not positive. Please enter a positive integer." << endl;
-        cin >> checkIfPrime;
+    // Validate and gather user input.
+    while ( ( checkIfPrimeLower < 1 ) || ( checkIfPrimeUpper < 1 ) ) {
+        cout << "Integer is not positive. Please enter positive integers." << endl;
+        cout << "Enter a positive integer for the lower limit to be evauated: " << endl;
+        cin >> checkIfPrimeLower;
+        cout << "Enter a positive integer for the upper limit to be evauated: " << endl;
+        cin >> checkIfPrimeUpper;
     }
 
-    // Debug
-    Prime(num);
+    // Call prime function
+    cout << "The prime numbers from " << checkIfPrimeLower << " to " << checkIfPrimeUpper << " are:" << endl;
+    for (  int iPrime = checkIfPrimeLower; iPrime < checkIfPrimeUpper; iPrime++ ) {
+        checkIfPrime = iPrime;
+        Prime(checkIfPrime);
+        if (( Prime(checkIfPrime)) == 1 ) {
+            cout << iPrime << endl;
+        }
+    } cout << "Thank you, drive thru." << endl;
 
-    // Print prime state.
-    if ( isPrime == 1 ) {
-        cout << "The number " << checkIfPrime << " is prime." << endl;
-    } else cout << "The number " << checkIfPrime << " is not prime." << endl;
+    // Debug
+    // cout << Prime(checkIfPrime) << endl;
 
     return 0;
 }
 
-bool Prime (int num) {
+bool Prime (int checkIfPrime) {
 
     int i, j = 0;
 
     // Calculate if prime.
-    for ( i = 2; i < num; i++ ) {
-        if (( num % i ) == 0 ) {
+    for ( i = 2; i < checkIfPrime; i++ ) {
+        if (( checkIfPrime % i ) == 0 ) {
             j++;
             break;
         }
     }
-    return num;
+
+    // Declare prime state.
+    if ( j == 0 ) {
+        return 1;
+    } else return 0;
+
 }
